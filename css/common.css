@@ -23,16 +23,21 @@ button {
   cursor: pointer;
 }
 
+.gallery {
+  display: flex;
+  justify-content: center;
+  margin-top: 150px;
+}
 .gallery__list {
   list-style: none;
-  margin-bottom: 5px;
+  margin-left: 5px;
 }
-.gallery__list:last-child {
-  margin-bottom: 0;
+.gallery__list:first-child {
+  margin-left: 0;
 }
 
 .gallery__img {
   display: block;
-  width: 80px;
-  height: 50px;
+  width: 280px;
+  height: 190px;
 }

@@ -15,17 +15,19 @@ const images = [
 ];
 
 const galleryList = document.querySelector('.gallery');
-const createdImgTags = images.forEach(image => {
-  const galleryListItems = document.createElement('li');
-  const createdImgTags = document.createElement('img');
-  const { url, alt } = image;
-  createdImgTags.src = `${image.url}`;
-  createdImgTags.alt = `${image.alt}`;
-  galleryListItems.insertAdjacentElement('afterbegin', createdImgTags);
-  createdImgTags.classList.add('gallery__img');
-  galleryListItems.classList.add('gallery__list');
 
- return galleryList.append(galleryListItems);
-}
-);
+
+const createdImgItems = images.map(image => {
+  const galleryListItems = document.createElement('li');
+  galleryListItems.classList.add('gallery__list');
+  const createdImgMarkup = `<img src="${image.url}" class="gallery__img" alt="${image.alt}">`;
+
+  galleryListItems.insertAdjacentHTML('afterbegin', createdImgMarkup);
+  
+  return galleryListItems;
+  
+});
+
+galleryList.append(...createdImgItems);
+
 console.log(galleryList);
