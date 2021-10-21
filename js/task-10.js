@@ -45,5 +45,6 @@ function createBoxes(amount) {
 function destroyBoxes() {
  
   boxesBlockRef.innerHTML = '';
-
+ 
+firstBoxSize = 30;
 }
